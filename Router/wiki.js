@@ -20,11 +20,18 @@ wikiRouter.post('/', async (req, res) => {
     slug: slug
   });
   res.send('got to POST');
+  // console.log(newPage);
 })
 
 wikiRouter.get('/add', async (req, res) => {
   const add = await addPage();
   res.send(add);
+})
+
+wikiRouter.get('/:slug', async (req, res) => {
+  const slugInput = req.params.slug;
+  const slugInfo = await Page.findOne({where: {slug: slugInput}});
+  res.json(slugInfo);
 })
 
 module.exports = wikiRouter;
