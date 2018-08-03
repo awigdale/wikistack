@@ -6,6 +6,7 @@ const app = express();
 const wikiRouter = require('./Router/wiki.js');
 const userRouter = require('./Router/user.js');
 
+app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
  res.redirect('/wiki');
 })
@@ -24,5 +25,6 @@ const init = async () => {
    console.log('App listening on port 3000');
   });
 }
+
 
 init();

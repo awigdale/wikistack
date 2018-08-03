@@ -34,8 +34,10 @@ module.exports = () => layout(html`
     </div>
   </div>
 
-
-    <div>PLACEHOLDER FOR PAGE STATUS INPUT FIELD</div>
+    <div class ="col-sm-offset-2 col-sm-10">
+      <input type="radio" name="status" value="open">Open<br>
+      <input type="radio" name="status" value="closed">Closed
+    </div>
 
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">submit</button>
